@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Russo+One&family=Tinos:wght@700&display=swap" rel="stylesheet">
+    <meta name="google-signin-client_id" content="853914232124-u47o48nkjep6gu9eii14fiejt88a9o85.apps.googleusercontent.com">
+    <title>Money Quest</title>
+</head>
+<body>
+    <div class="space stars1"></div>
+    <div class="space stars2"></div>
+    <div class="space stars3"></div>
+    <div class="intro-container">
+        <div class="intro-text">
+            <p>START YOUR <br>QUEST JOURNEY NOW!</p>
+        </div>
+        <div class="sign-in-container">
+            <button class="button-30" role="button" onclick="alert('We will register you soon ^^')">Register Here</button>
+            <button class="button-10" role="button">
+            <div id="my-signin2"></div></button>
+            <script>
+                async function signInWithGoogle() {
+  const { user, session, error } = await supabase.auth.signIn({
+    provider: 'google'},
+    {
+  redirectTo: 'https://localhost:5500/home-user.html'
+})
+}
+            
+              function onSuccess(googleUser) {
+                console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+              }
+              function onFailure(error) {
+                console.log(error);
+              }
+              function renderButton() {
+                gapi.signin2.render('my-signin2', {
+                  'scope': 'profile email',
+                  'width': 250,
+                  'height': 50,
+                  'longtitle': true,
+                  'theme': 'white',
+                  'ux_mode': 'redirect',
+                    'redirect_uri': 'http://localhost:5500/home-user.html',
+                  'onsuccess': onSuccess,
+                  'onfailure': onFailure
+                });
+              }
+            </script>
+          
+            <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+        </div>
+    </div>
+</body>
+</html>

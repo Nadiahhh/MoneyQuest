@@ -1,0 +1,260 @@
+
+
+body {
+    background-color: #000068 ;
+    font-family: 'Russo One', sans-serif;
+    overflow: hidden;
+}
+.intro-container {
+    margin: 60px;
+    margin-top: 200px;
+}
+
+.intro-text {
+    border: 5px solid whitesmoke;
+    background-color: #000068 ;
+    border-radius: 25px;
+    padding: 0.5em;
+    color: #F1F1F1;
+    text-align: center;
+    font-size: 3vw;
+    box-shadow: #EEEB1B  0px 54px 55px, #EEEB1B  0px -12px 30px, #EEEB1B  0px 4px 6px, #EEEB1B  0px 12px 13px, #EEEB1B  0px -3px 5px;
+    animation: blinker 3s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+      opacity: 0.5;
+    }
+}
+
+.sign-in-container {
+    margin: 5em 35em;
+}
+
+#my-signin2 {
+    margin: 1em;
+    border-radius: 200px;
+}
+.button-10 {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: 'Russo One', sans-serif;
+    height: 48px;
+    width: 250px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 1em;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+  }
+  
+.button-10:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+  
+.button-10:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+  
+.button-10:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+
+.button-30 {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: 'Russo One', sans-serif;
+    height: 48px;
+    width: 250px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 1em;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+  }
+  
+  .button-30:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  }
+  
+  .button-30:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .button-30:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+
+  .space {
+    background: rgba(128, 0, 128, 0.1) center / 200px 200px round;
+    border: 1px dashed purple;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .stars1 {
+    animation: space 80s ease-in-out infinite;
+    background-image:
+      radial-gradient(
+        1px 1px at 25px 5px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        1px 1px at 50px 25px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        1px 1px at 125px 20px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        1.5px 1.5px at 50px 75px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        2px 2px at 15px 125px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        2.5px 2.5px at 110px 80px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      );
+  }
+  .stars2 {
+    animation: space 140s ease-in-out infinite;
+    background-image:
+      radial-gradient(
+        1px 1px at 75px 125px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        1px 1px at 100px 75px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        1.5px 1.5px at 199px 100px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        2px 2px at 20px 50px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        2.5px 2.5px at 100px 5px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        2.5px 2.5px at 5px 5px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      );
+
+  }
+
+  .stars3 {
+    animation: space 100s ease-in-out infinite;
+    background-image:
+      radial-gradient(
+        1px 1px at 10px 10px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        1px 1px at 150px 150px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        1.5px 1.5px at 60px 170px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        1.5px 1.5px at 175px 180px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        2px 2px at 195px 95px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        2.5px 2.5px at 95px 145px, 
+        white, 
+        rgba(255, 255, 255, 0)
+      );
+  }
+
+  @keyframes space {
+    40% {
+      opacity: 0.75;
+    }
+    50% {
+      opacity: 0.25;
+    }
+    60% {
+      opacity: 0.75;
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
