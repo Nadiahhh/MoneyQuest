@@ -20,18 +20,9 @@
             <p>START YOUR <br>QUEST JOURNEY NOW!</p>
         </div>
         <div class="sign-in-container">
-            <button class="button-30" role="button" onclick="alert('We will register you soon ^^')">Register Here</button>
-            <button class="button-10" role="button">
-            <div id="my-signin2"></div></button>
+          <a href="#notready" class="btn gray">REGISTER HERE!</a>
+          <div id="my-signin2" class="btn">   
             <script>
-                async function signInWithGoogle() {
-  const { user, session, error } = await supabase.auth.signIn({
-    provider: 'google'},
-    {
-  redirectTo: 'https://localhost:5500/home-user.html'
-})
-}
-            
               function onSuccess(googleUser) {
                 console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
               }
