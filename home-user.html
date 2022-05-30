@@ -1,87 +1,83 @@
-<html>
-    <head>
-        <meta http-equiv="refresh" content="1" />
-        <meta name ="Nadiah" content=LI>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name = "description" content = "This page is for Odin Assignment"/>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet">
-        <title>Odin Assignment</title>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Home</title>
+</head>
+<body class="home-user-body">
+    <div class="header">
+        <a href="home-user.html"><img src="./images/TECH_USAGE.png" alt="SmartMoney Logo" width="250" height="80" id="logo"></a>
+        <div id="empty-header"></div>
+        <div id="header-options">
+            <a href="about.html" class="header-link"> ABOUT US </a>
+            <a href="course.html" class="header-link"> QUESTS </a>
+            <a href="contact.html" class="header-link"> CONTACT US </a>
+            <a href="profile.html" class="header-link">YOUR PROFILE</a>
+        </div>
+    </div>
 
-    <body class="home-user-body">
-        <div class="header">
-            <a href="home-user.html">
-            <img src="./images/TECH_USAGE.png" alt="SmartMoney Logo" width="250" height="80" id="logo"></a>
-            <div id="empty-header"></div>
-            <div id="header-options">
-                <a href="about.html" class="header-link"> ABOUT US </a>
-                <a href="course.html" class="header-link"> QUESTS </a>
-                <a href="contact.html" class="header-link"> CONTACT US </a>
-                <a href="profile.html" class="header-link">YOUR PROFILE</a>
+    <div class="awesome">
+        <div class="awesome-text">
+            <p id="awesome-big"><strong>XP PROGRESS TRACKER</strong></p>
+            <p id="awesome-normal">Earn experience points by going through our quests! Click the button below to start learning!</p>
+            <div id="signup-button">
+            <button type="button" onclick="alert('Coming Soon ><')">Start a Quest</button>
             </div>
         </div>
-        <div class="awesome">
-            <div class="awesome-text">
-                <p id="awesome-big"><strong>XP PROGRESS TRACKER</strong></p>
-                <p id="awesome-normal">Earn experience points by going through our quests! Click the button below to start learning!</p>
-                <div id="signup-button">
-                <button type="button" onclick="alert('Coming Soon ><')">Start a Quest</button>
-                </div>
-                
+        <section class="experience">
+            <h2>Level 1</h2>
+            <input type="checkbox" />
+            <div class="exp-bar">
+                <span><span></span></span>
             </div>
-            <section class="experience">
-                <h2>Level 1</h2>
-                <input type="checkbox" />
-                <div class="exp-bar">
-                    <span><span></span></span>
-                </div>
-                Press the checkbox to get free XP!
-            </section>
-        </div>
-        <div class="random">
-            <p id="random-header"><strong>Check out our interesting Quests!</strong></p>
-            <div class="course-list">
-                <div class="course-list-table"><img src="./images/sword.png" height="100" width="100">
-                    <div class="title-description">
+            Press the checkbox to get free XP!
+        </section>
+    </div>
+    
+    <div class="random">
+        <p id="random-header"><strong>Check out our interesting Quests!</strong></p>
+        <div class="course-list">
+            <div class="course-list-table"><img src="./images/sword.png" height="100" width="100">
+                <div class="title-description">
                     <h1><a href="#finance">FIGHTING FINANCE</a></h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, magni tempore omnis inventore corporis deserunt corrupti natus adipisci pariatur temporibus cum laudantium consectetur, 
                         officiis deleniti expedita saepe reiciendis at sunt.</p>
-                    </div>
-                </div>
-                <div class="course-list-table">
-                    <img src="./images/map.png" height="100" width="100">
-                    <div class="title-description">
-
-                    <h1><a href="#stocks">SEEKING STOCKS</a></h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos sed voluptates non illum nam dolor cum tempore sunt esse accusantium labore distinctio minus sapiente veniam, numquam ullam deleniti magni quidem.</p>
-                </div>
-                </div>
-                <div class="course-list-table">
-                    <img src="./images/smoke.png" height="100" width="100">
-                    <div class="title-description">
-                        <h1><a href="#investments">INVENTING INVESTMENTS</a></h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat perspiciatis laudantium inventore cum alias ea ab et nostrum eveniet ipsa iste dolor facilis repellat harum, blanditiis laboriosam numquam quidem maiores?</p></div>
                 </div>
             </div>
+            <div class="course-list-table">
+                <img src="./images/map.png" height="100" width="100">
+                <div class="title-description">
+                <h1><a href="#stocks">SEEKING STOCKS</a></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos sed voluptates non illum nam dolor cum tempore sunt esse accusantium labore distinctio minus sapiente veniam, numquam ullam deleniti magni quidem.</p>
+                </div>
+            </div>
+            <div class="course-list-table">
+                <img src="./images/smoke.png" height="100" width="100">
+                <div class="title-description">
+                <h1><a href="#investments">INVENTING INVESTMENTS</a></h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat perspiciatis laudantium inventore cum alias ea ab et nostrum eveniet ipsa iste dolor facilis repellat harum, blanditiis laboriosam numquam quidem maiores?</p></div>
+            </div>
         </div>
-        <div class="signup">
-            <div class="signup-container">
-                <div id="signup-text">
+    </div>
+    <div class="signup">
+        <div class="signup-container">
+            <div id="signup-text">
                 <p><strong>Call to action! It's time!</strong></p>
                 <p id="small"><light>Sign up for our product by clicking the button right over there!</light></p>
-                </div>
-                <div id="signup-button">
+            </div>
+            <div id="signup-button">
                 <button type="button" onclick="alert('You have signed up!')">Sign up</button>
-                </div>
             </div>
         </div>
-        <footer>
-            <p>Copyright © The Odin Project 2021</p>
-        </footer>
-    </body>
+    </div>
+    <footer>
+        <p>Copyright © The Odin Project 2021</p>
+    </footer>
+</body>
 </html>
