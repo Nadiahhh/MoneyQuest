@@ -1,51 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Russo+One&family=Tinos:wght@700&display=swap" rel="stylesheet">
-    <meta name="google-signin-client_id" content="853914232124-u47o48nkjep6gu9eii14fiejt88a9o85.apps.googleusercontent.com">
-    <title>Money Quest</title>
-</head>
-<body>
-    <div class="space stars1"></div>
-    <div class="space stars2"></div>
-    <div class="space stars3"></div>
-    <div class="intro-container">
-        <div class="intro-text">
-            <p>START YOUR <br>QUEST JOURNEY NOW!</p>
-        </div>
-        <div class="sign-in-container">
-          <a href="#notready" class="btn gray">REGISTER HERE!</a>
-          <div id="my-signin2" class="btn">   
-            <script>
-              function onSuccess(googleUser) {
-                console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-              }
-              function onFailure(error) {
-                console.log(error);
-              }
-              function renderButton() {
-                gapi.signin2.render('my-signin2', {
-                  'scope': 'profile email',
-                  'width': 250,
-                  'height': 50,
-                  'longtitle': true,
-                  'theme': 'white',
-                  'ux_mode': 'redirect',
-                    'redirect_uri': 'https://nadiahhh.github.io/MoneyQuest/home-user.html',
-                  'onsuccess': onSuccess,
-                  'onfailure': onFailure
-                });
-              }
-            </script>
-          
-            <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Quest Login Page</title>
+  </head>
+  <body>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <div id="title">
+      <span> START YOUR QUEST JOURNEY NOW! </span>
     </div>
-</body>
+
+    <div id="login-box">
+      <div class="left">
+        <h1 id="status">REGISTER</h1>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Username"
+        />
+        <input type="text" id="email" name="email" placeholder="E-mail" />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+        />
+
+        <input type="submit" id="signUp" name="signUp" value="Sign Up" />
+      </div>
+
+      <div class="right">
+        
+        <span class="loginwith">SIGN IN</span>
+        <button class="social-signin user">Log in with username</button>
+        <button class="social-signin facebook">Log in with facebook</button>
+        <button class="social-signin twitter">Log in with Twitter</button>
+        <button class="social-signin google" id="googleLogin">
+          Log in with Google
+        </button>
+      </div>
+      <div class="or">OR</div>
+    </div>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+      import { getDatabase } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithPopup,
+        GoogleAuthProvider,
+      } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
+      //  import { getAuth, signInWithRedirect, GoogleAuthProvider, getRedirectResult } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDelOkZ6SXJps2pThcz6cx8L7L5c_UyWSk",
+        authDomain: "moneyquest-95b23.firebaseapp.com",
+        databaseURL:
+          "https://moneyquest-95b23-default-rtdb.asia-southeast1.firebasedatabase.app/",
+        projectId: "moneyquest-95b23",
+        storageBucket: "moneyquest-95b23.appspot.com",
+        messagingSenderId: "284033417808",
+        appId: "1:284033417808:web:e7da6e1b37c8327597c755",
+        measurementId: "G-YKCGXSYYXG",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+      const auth = getAuth();
+      const provider = new GoogleAuthProvider();
+
+      signUp.addEventListener("click", (e) => {
+        var user = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            alert("user created!");
+            window.location.replace("home-user.html");
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage);
+          });
+      });
+
+      googleLogin.addEventListener("click", (e) => {
+        signInWithPopup(auth, provider)
+          .then((result) => {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            // The signed-in user info.
+            const user = result.user;
+            // ...
+            window.location.replace("home-user.html");
+          })
+          .catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            const email = error.customData.email;
+            // The AuthCredential type that was used.
+            const credential = GoogleAuthProvider.credentialFromError(error);
+            // ...
+            alert(errorMessage);
+          });
+      });
+    </script>
+  </body>
 </html>
