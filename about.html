@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" class="non-login">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>About Us</title>
+  </head>
+  <body class="home-user-body">
+    <div class="header">
+      <a href="home-user.html"
+        ><img
+          src="./images/TECH_USAGE.png"
+          alt="SmartMoney Logo"
+          width="250"
+          height="80"
+          id="logo"
+      /></a>
+      <div id="empty-header"></div>
+      <div id="header-options">
+        <a href="about.html" class="header-link"> ABOUT US </a>
+        <a href="course.html" class="header-link"> QUESTS </a>
+        <a href="contact.html" class="header-link"> CONTACT US </a>
+        <img src="./images/user.png" id="pfp" />
+        <div class="dropdown">
+          <button class="dropbtn" id="profileName">
+            YOUR PROFILE
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="profile.html">YOUR PROFILE</a>
+            <button id="signOutbtn">SIGN OUT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-about">
+      <div class="diagonal-hero-bg">
+        <div class="stars-about">
+          <p class="hero-title">ABOUT US</p>
+          <div class="small-about"></div>
+          <div class="medium-about"></div>
+          <div class="big-about"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="random">
+        <div id="intro0">
+            <h1>WHAT IS SMART MONEY ABOUT?</h1> 
+            <span class="flexing">
+                
+                <p>SmartMoney was originated from the hardships and experiences of two individuals who were unfamilliar in the finance world
+                  and has found interest in it after researching and self-learning the terms and concepts of it online. Although there are existing
+                  online resources that teaches everyone about finance, there are also difficulties and disadvantages of these platforms, in which
+                  the creators of SmartMoney has encountered.
+                    <br><br>
+                  Learning everything about finance is complex, thus, this website is developed to make the learning journey easier to comprehend. In other
+                  platforms, resources are separated, advanced and users are expected to have atleast a basic foundation on finance and the current trends
+                  of it around the world. SmartMoney goes further back where individuals are welcomed to start from scratch and follow our thorough learning
+                  plan for you to understand from simple financial terms to common trends and complicated concepts that can be applied in the real world.
+                  
+                </p>
+                <img src="images/about-avatar.png" id="about-smart">
+            </span>
+        </div>
+
+        <div id="intro1">
+            <h1>NADIAH UMMAIRAH</h1>
+            <h3>Website Creator, Design</h3>
+            <span class="flexing">
+                <img src="images/about-nad.png" id="about-creat">
+                <p>As stated above, my partner and I created SmartMoney due to our difficult experience of learning business and finances altogether. As I began
+                  my course relating to business, I was taken aback by the sudden use of concepts and terms commonly used in the finance world. When I wanted to learn
+                  more, online resources made everything more complicated for me as the answers and explanations were all in sections and had no continuous lessons. This 
+                  made learning difficult and I had trouble understanding a simple concept that could have been taught in a few minutes.
+                </p>
+
+                <p>Therefore, when desigining SmartMoney, I decided to make this website suitable for people who are genuinely new to finance, those who are advanced
+                  or even those who would like to try out for fun! We went with a gaming theme and quiz to make learning more fun! From my experience, learning on
+                  financial platforms were dull and had many textbook answers. Hence, with a gamified experience, I hope it intrigues and encourages the user to continue
+                  onto their adventure in the world of finance despite the increase level of difficulty to understand everything!
+                </p>
+            </span>
+        </div>
+    </div>
+
+    <footer>
+      <p>Copyright © The Orbital Project 2022</p>
+    </footer>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+      import {
+        getDatabase,
+        set,
+        get,
+        ref,
+        child,
+        update,
+        push,
+      } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js";
+      import {
+        getAuth,
+        onAuthStateChanged,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDelOkZ6SXJps2pThcz6cx8L7L5c_UyWSk",
+        authDomain: "moneyquest-95b23.firebaseapp.com",
+        databaseURL:
+          "https://moneyquest-95b23-default-rtdb.asia-southeast1.firebasedatabase.app/",
+        projectId: "moneyquest-95b23",
+        storageBucket: "moneyquest-95b23.appspot.com",
+        messagingSenderId: "284033417808",
+        appId: "1:284033417808:web:e7da6e1b37c8327597c755",
+        measurementId: "G-YKCGXSYYXG",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+      const auth = getAuth();
+
+      signOutbtn.addEventListener("click", (e) => {
+        signOut(auth)
+          .then(() => {
+            // Sign-out successful.
+            alert("user signed out!");
+            window.location.replace("index.html");
+          })
+          .catch((error) => {
+            // An error happened.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage);
+          });
+      });
+
+      onAuthStateChanged(auth, (user) => {
+        const dbRef = ref(getDatabase(app));
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/firebase.User
+          const uid = user.uid;
+          const name = user.username;
+          const email = user.email;
+          get(child(dbRef, `users/${uid}`))
+            .then((snapshot) => {
+              if (snapshot.exists()) {
+                console.log(snapshot.val());
+                document.getElementById("profileName").textContent =
+                  snapshot.val().username;
+              } else {
+                console.log("No data available");
+              }
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+        } else {
+          // User is signed out
+          // ...
+        }
+      });
+    </script>
+  </body>
+</html>

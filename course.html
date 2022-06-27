@@ -41,27 +41,6 @@
       </div>
     </div>
 
-    <div class="awesome">
-      <div class="awesome-text">
-        <p id="awesome-big"><strong>RESUME YOUR ADVENTURE NOW!</strong></p>
-        <p id="awesome-normal">
-          Earn experience points by going through our quests! Click the button
-          below to start learning!
-        </p>
-        <button type="button" onclick="alert('Coming Soon ><')" id="questStart">
-          Start a Quest
-        </button>
-      </div>
-      <section class="experience">
-        <h2>Level 1</h2>
-        <input type="checkbox" />
-        <div class="exp-bar">
-          <span><span></span></span>
-        </div>
-        Press the checkbox to get free XP!
-      </section>
-    </div>
-
     <div class="random">
       <p id="random-header">
         <strong>Check out our interesting Quests!</strong>
@@ -97,6 +76,7 @@
           </div>
           </div>
         </div>
+   
         <div class="course-list-table">
           <div class="hero-image2">
           <img src="./images/map.png" height="100" width="100" />
@@ -127,6 +107,7 @@
           </div>
           </div>
         </div>
+    
         <div class="course-list-table">
           <div class="hero-image3">
           <img src="./images/smoke.png" height="100" width="100" />
@@ -158,24 +139,7 @@
       </div>
       </div>
     </div>
-    <div class="signup">
-      <div class="signup-container">
-        <div id="signup-text">
-          <p><strong>Call to action! It's time!</strong></p>
-          <p id="small">
-            <light
-              >Sign up to be part of SmartMoney's team by clicking the button right over
-              there!</light
-            >
-          </p>
-        </div>
-        <div id="signup-button">
-          <button type="button" onclick="alert('You have signed up!')">
-            Sign up
-          </button>
-        </div>
-      </div>
-    </div>
+    
     <footer>
       <p>Copyright © The Orbital Project 2022</p>
     </footer>
@@ -240,7 +204,6 @@
             .then((snapshot) => {
               if (snapshot.exists()) {
                 console.log(snapshot.val());
-                document.getElementById("awesome-big").textContent = "RESUME YOUR ADVENTURE NOW, " + snapshot.val().username +"!";
                 document.getElementById("profileName").textContent = snapshot.val().username;
               } else {
                 console.log("No data available");

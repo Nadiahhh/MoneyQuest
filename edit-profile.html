@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" class="non-login">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&family=Playfair+Display:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
-    <title>Profile</title>
-</head>
-<body class="home-user-body">
+    <title>Edit Profile</title>
+  </head>
+  <body class="home-user-body">
     <div class="header">
       <a href="home-user.html"
         ><img
@@ -29,40 +32,39 @@
         <a href="about.html" class="header-link"> ABOUT US </a>
         <a href="course.html" class="header-link"> QUESTS </a>
         <a href="contact.html" class="header-link"> CONTACT US </a>
-        <img src="./images/user.png" id="pfp"/>
+        <img src="./images/user.png" id="pfp" />
         <div class="dropdown">
-            <button class="dropbtn" id="profileName">YOUR PROFILE 
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="profile.html">YOUR PROFILE</a>
-                <button id="signOutbtn">SIGN OUT</button>
-            </div>
-          </div> 
+          <button class="dropbtn" id="profileName">
+            YOUR PROFILE
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="profile.html">YOUR PROFILE</a>
+            <button id="signOutbtn">SIGN OUT</button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="profiledt">
-        <h2>PROFILE DETAILS</h2>
-        <div class="profileflex">
-            <img src="./images/user.png" id="profilepic"/>
-            <div id="userdetails">
-                <h3>Name</h3>
-                <p id="userName">Username</p>
-                <h3>Email</h3>
-                <p id="useremail">Email</p>
-            </div>
-            
-            <a href="edit-profile.html" id="editProf">EDIT PROFILE</a>
+    <div class="profiledit">
+      <h2>PROFILE DETAILS</h2>
+      <div class="profileflex">
+        <img src="./images/user.png" id="profilepic" />
+        <div id="userdetails">
+          <h3>Name</h3>
+          <input
+            type="text"
+            placeholder="Enter New Username"
+            name="username"
+            id="NameBox"
+          />
+          <button type="submit" id="confProf">Confirm</button>
+          <h3>Email</h3>
+          <p id="useremail">Email</p>
         </div>
+      </div>
     </div>
-    <div class="profilexp">
-        <h2>XP TRACKER</h2>
-    </div>
-    <div class="profilegoal">
-        <h2>LEARNING GOAL</h2>
-    </div>
-    
+
     <footer>
       <p>Copyright © The Orbital Project 2022</p>
     </footer>
@@ -99,6 +101,12 @@
       const app = initializeApp(firebaseConfig);
       const database = getDatabase(app);
       const auth = getAuth();
+      //const rootref = database.ref('users');
+      const dbRef = ref(database);
+
+      //const userId = auth.currentUser.uid;
+      var namebox = document.getElementById("NameBox");
+      var confirm = document.getElementById("confProf");
 
       signOutbtn.addEventListener("click", (e) => {
         signOut(auth)
@@ -127,7 +135,6 @@
             .then((snapshot) => {
               if (snapshot.exists()) {
                 console.log(snapshot.val());
-                document.getElementById("userName").textContent = snapshot.val().username;
                 document.getElementById("profileName").textContent = snapshot.val().username;
                 document.getElementById("useremail").textContent = snapshot.val().email;
               } else {
@@ -141,6 +148,27 @@
           // User is signed out
           // ...
         }
+      });
+
+      confProf.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const auth = getAuth();
+        //const rootref = database.ref('users');
+
+        const userId = auth.currentUser.uid;
+        const userEmail = auth.currentUser.email;
+
+        const newData = {
+          username: namebox.value,
+          email: userEmail,
+        };
+        const updates = {};
+        updates["/users/" + userId] = newData;
+        alert("user updated!");
+        location.reload();
+        return update(ref(database), updates);
+        
       });
     </script>
   </body>
