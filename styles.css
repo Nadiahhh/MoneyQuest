@@ -1885,3 +1885,19 @@ footer p {
   background-color: #ECC257;
   font-weight: bold;
 }
+
+#demo {
+  margin-top: -5.5em;  
+  border: 1px solid black;
+  max-width: 800px;
+}
+
+#forumcolumn {
+  margin-left: 10em; 
+}
+
+#forumTopic {
+  margin-top: -4em;
+  margin-left: 2em;
+  text-shadow: 2px 2px 4px grey;
+}
