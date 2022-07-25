@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" class="non-login">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Stocks</title>
+  </head>
+  <body class="home-user-body">
+    <div class="header">
+      <a href="home-user.html"
+        ><img
+          src="./images/TECH_USAGE.png"
+          alt="SmartMoney Logo"
+          width="250"
+          height="80"
+          id="logo"
+      /></a>
+      <div id="empty-header"></div>
+      <div id="header-options">
+        <a href="about.html" class="header-link"> ABOUT US </a>
+        <a href="course.html" class="header-link"> QUESTS </a>
+        <a href="forum.html" class="header-link"> FORUM </a>
+        <a href="contact.html" class="header-link"> CONTACT US </a>
+        <img src="./images/user.png" id="pfp" />
+        <div class="dropdown">
+          <button class="dropbtn" id="profileName">
+            YOUR PROFILE
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="profile.html">YOUR PROFILE</a>
+            <button id="signOutbtn">SIGN OUT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-about">
+        <div class="hero-image-course">
+          <p class="hero-title">STOCKS</p>
+          </div>
+      </div>
+
+      <div class="flexing" id="finance-page">
+        
+        <div id="finance-content">
+          <h1 id="Introduction"><b>Introduction</b></h1>
+          <p>Corporations issue stock to raise funds to operate their businesses and the holder of stock, a shareholder, may have a claim to part of the company's assets and earnings.
+            A shareholder is considered an owner of the issuing company, determined by the number of shares an investor owns relative to the number of outstanding shares. If a company has 1,000 shares of stock outstanding and one person owns 100 shares, that person would own and have a claim to 10% of the company's assets and earnings.
+           </p>
+           Stockholders do not own a corporation but corporations are a special type of organization because the law treats them as legal persons. Corporations file taxes. can borrow, can own property, and can be sued. The idea that a corporation is a “person” means that the corporation owns its assets. A corporate office full of chairs and tables belongs to the corporation, and not to the shareholders.
+           Corporate property is legally separated from the property of shareholders, which limits the liability of both the corporation and the shareholder. If the corporation goes bankrupt, a judge may order all of its assets sold but a shareholder's assets are not at risk. The court cannot force you to sell your shares, although the value of your shares may have fallen. Likewise, if a major shareholder goes bankrupt, they cannot sell the company’s assets to pay their creditors.</p>
+         <br>
+          <h1 id="what-is-finance"><b>What is Stocks?</b></h1>
+          <p>A stock, also known as equity, is a security that represents the ownership of a fraction of the issuing corporation. Units of stock are called "shares" which entitles the owner to a proportion of the corporation's assets and profits equal to how much stock they own. 
+            Stocks are bought and sold predominantly on stock exchanges and are the foundation of many individual investors' portfolios. Stock trades have to conform to government regulations meant to protect investors from fraudulent practices.
+            </p>
+            <br>Most often, stocks are bought and sold on stock exchanges, such as the Nasdaq or the New York Stock Exchange (NYSE). After a company goes public through an initial public offering (IPO), its stock becomes available for investors to buy and sell on an exchange. Typically, investors will use a brokerage account to purchase stock on the exchange, which will list the purchasing price (the bid) or the selling price (the offer). The price of the stock is influenced by supply and demand factors in the market, among other variables.<br>
+          <br>
+          <h1 id="stocks-real-world"><b>How can we use stocks?</b></h1>
+          <p>There are two ways to earn money by owning shares of stock is through dividends and capital appreciation. Dividends are cash distributions of company profits. If a company has 1,000 shares outstanding and declares a $5,000 dividend, then stockholders will get $5 for each share they own. Capital appreciation is the increase in the share price itself. If you sell a share to someone for $10, and the stock is later worth $11, the shareholder has made $1.</p>
+          Stocks are issued by companies to raise capital to grow the business or undertake new projects. There are important distinctions between whether somebody buys shares directly from the company when it issues them in the primary market or from another shareholder in the secondary market. When the corporation issues shares, it does so in return for money.
+
+          Bonds vary from stocks in several ways. Bondholders are creditors to the corporation and are entitled to interest as well as repayment of the principal invested. Creditors are given legal priority over other stakeholders in the event of a bankruptcy and will be made whole first if a company is forced to sell assets.
+          
+          Conversely, shareholders often receive nothing in the event of bankruptcy, implying that stocks are inherently riskier investments than bonds<br>
+          <br>
+          </div>
+        <div id="finance-obj">
+          Learning Objectives:
+          <ul style=“list-style-type:circle">
+          <li><a href="#Introduction">Introduction</a></li>
+          <li><a href="#what-is-stocks">What is Stocks?</a></li>
+          <li><a href="#stocks-real-world">How can we use stocks?</a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+
+      <center>
+        <div class="quiz-container">
+          <div id="quiz-text">
+            <p><strong>That's the end of the lesson!</strong></p>
+            <p id="small">
+              <light
+                >Click here to start your quiz.</light
+              >
+            </p>
+          </div>
+          <div id="quiz-button">
+            <a href="stocks-quiz.html"><button type="button">
+              Start Quiz
+            </button>
+          </a>
+          </div>
+        </div>
+      </center>
+    
+    <footer>
+      <p>Copyright © The Orbital Project 2022</p>
+    </footer>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+      import {
+        getDatabase,
+        set,
+        get,
+        ref,
+        child,
+        update,
+        push,
+      } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js";
+      import {
+        getAuth,
+        onAuthStateChanged,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDelOkZ6SXJps2pThcz6cx8L7L5c_UyWSk",
+        authDomain: "moneyquest-95b23.firebaseapp.com",
+        databaseURL:
+          "https://moneyquest-95b23-default-rtdb.asia-southeast1.firebasedatabase.app/",
+        projectId: "moneyquest-95b23",
+        storageBucket: "moneyquest-95b23.appspot.com",
+        messagingSenderId: "284033417808",
+        appId: "1:284033417808:web:e7da6e1b37c8327597c755",
+        measurementId: "G-YKCGXSYYXG",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+      const auth = getAuth();
+
+      signOutbtn.addEventListener("click", (e) => {
+        signOut(auth)
+          .then(() => {
+            // Sign-out successful.
+            alert("user signed out!");
+            window.location.replace("index.html");
+          })
+          .catch((error) => {
+            // An error happened.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage);
+          });
+      });
+
+      onAuthStateChanged(auth, (user) => {
+        const dbRef = ref(getDatabase(app));
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/firebase.User
+          const uid = user.uid;
+          const name = user.username;
+          const email = user.email;
+          get(child(dbRef, `users/${uid}`))
+            .then((snapshot) => {
+              if (snapshot.exists()) {
+                console.log(snapshot.val());
+                document.getElementById("profileName").textContent =
+                  snapshot.val().username;
+              } else {
+                console.log("No data available");
+              }
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+        } else {
+          // User is signed out
+          // ...
+        }
+      });
+    </script>
+    
+  </body>
+</html>

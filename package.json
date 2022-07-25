@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "@supabase/supabase-js": "^1.35.3",
-    "firebase": "^9.9.0"
+    "firebase": "^9.9.0",
+    "react-router-dom": "^6.3.0"
   },
   "name": "firebase",
   "description": "Project for Orbital '22",
