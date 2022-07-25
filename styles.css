@@ -1290,7 +1290,25 @@ footer p {
   background-size: cover;
 }
 
+.hero-image-course{
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("images/wcave.jpg");
 
+  /* Set a specific height */
+  height: 15em;
+
+  /* Position and center the image to scale nicely on all screens */
+  /* Set a specific height */
+  min-height: 100px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -5em;
+}
 
 .the-arrow {
   width: 1px;
@@ -1424,6 +1442,52 @@ footer p {
 }
 .animated-arrow > .main > .the-arrow {
   position: relative;
+}
+.quiz-container {
+  margin: 7em;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: #FFD801;
+  color: white;
+  display: flex;
+  max-width: 600px;
+}
+
+.quiz-button {
+  margin: 7em;
+  padding: 30px;
+  padding-left: 100px;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+}
+
+#quiz-text {
+  margin-right: 50px;
+  flex: 1 1 0%;
+}
+
+#quiz-button {
+  flex: 0.8 0 0%;
+}
+
+.quiz-container button {
+  background-color: #FFD801;
+  border: 1px solid white;
+  color: white;
+  margin: 20px;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.quiz-container button:hover {
+  background-color: white;
+  color: #FFD801;
 }
 
 .signup-container {
@@ -1825,6 +1889,32 @@ footer p {
 
 #about-creat img {
   height: 10%;
+}
+
+#finance-page {
+  margin-top: -5em;
+}
+#finance-obj {
+  position: fixed;
+  border: 2px solid yellow;
+  padding: 2em;
+}
+
+#finance-obj a{
+ text-decoration: none;
+ color: grey;
+}
+
+#finance-obj a:hover{
+  color:rgb(0, 0, 0);
+  font-weight: 900;
+}
+ 
+
+#finance-content {
+  flex: 0.7 0 0%;
+  margin-left: 20em;
+  margin-top: -5em;
 }
 
 #contact {
